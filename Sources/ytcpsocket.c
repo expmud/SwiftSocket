@@ -126,7 +126,7 @@ int ytcpsocket_pull(int socketfd, char *data, int len, int timeout_sec) {
         if (readlen > 0) {
             datalen += readlen;
         }
-    } while (readlen > 0);
+    } while (ytcpsocket_bytes_available(socketfd));
     
     return datalen;
 }
